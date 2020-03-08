@@ -1,0 +1,136 @@
+@mixin all {
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0rem;
+  margin: 0rem;
+}
+html {
+  font: normal 1rem sans-serif;
+}
+body {
+  @include all;
+  .formSec {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    padding-top: 3rem;
+    h3 {
+      display: inline-block;
+      padding: 1rem 0rem;
+      font-size: 2rem;
+      width: 30%;
+      height: auto;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      display: inline-block;
+      border: 0.2rem solid rgba(0, 0, 0, 0.8);
+      height: 3rem;
+      border-radius: 0.1rem;
+    }
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      p {
+        padding-left: 1rem;
+      }
+    }
+    input[type="submit"] {
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 0rem;
+      background-color: #d4f8e8;
+      padding: 1.5rem 2rem;
+      max-width: 100%;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: #eee;
+      border-radius: 50%;
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: 40%;
+        padding: 0rem;
+        margin: 0rem;
+        border-radius: 50%;
+        background: white;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    input[type="radio"] {
+      display: none;
+      &:checked {
+        & ~ .checkmark {
+          background-color: #2196f3;
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+    .radioSec {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin-left: 1rem;
+    }
+    .errors {
+      position: relative;
+      display: inline-block;
+      width: 60%;
+      height: auto;
+    }
+    .jquery {
+      position: relative;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      max-width: 100%;
+      padding-top: 3rem;
+      h4 {
+        display: inline-block;
+        font-size: 5rem;
+        text-align: center;
+        font-weight: bold;
+        max-width: 100%;
+        color: #feb72b;
+        p {
+          font-size: 1rem;
+          color: #ffe75e;
+        }
+      }
+    }
+    overflow: hidden;
+    .fa {
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      text-align: center;
+      padding: 0rem;
+      margin: 0rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+}
